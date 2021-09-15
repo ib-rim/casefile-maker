@@ -1,191 +1,135 @@
 
 @font-face {
-	font-family: 'sketchup';
-	src: url('../fonts/sketchup.ttf');
-}
-
-@font-face {
-	font-family: 'doctor-soos';
-	src: url('../fonts/doctor-soos.ttf');
-}
-
-@font-face {
-	font-family: 'Milliard';
-	src: url('../fonts/Rene\ Bieder\ \ Milliard\ ExtraLight.woff');
-}
-
-@font-face {
-	font-family: 'MilliardBold';
-	src: url('../fonts/Rene\ Bieder\ \ Milliard\ Medium.woff');
-}
-
-@font-face {
-	font-family: 'MilliardExtraBold';
-	src: url('../fonts/Rene\ Bieder\ \ Milliard\ ExtraBold.woff');
+	font-family: 'Typewriter';
+	src: url('../fonts/Tox\ Typewriter.ttf');
 }
 
 :root {
-	--shadow: 0px 8px 16px 0 rgba(0, 0, 0, 0.2);
-	--light-blue: #b8dbf8;
-	--text-blue: #101693;
-	--background-blue: #105893;
-	--dark-blue: #193e5c;
+	--shadow: -3px 5px 1px 3px rgba(0, 0, 0, 0.2);
+	--background-clr: #300000;
+}
+
+html {
+	background-color: var(--background-clr);
+	background-image: url(/img/tabletop.jpg);
+	font-family: 'Typewriter';
+	height: 100%;
 }
 
 body {
-	color: var(--text-blue);
-	background-color: var(--background-blue);
-	font-family: 'Milliard';
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	/* background-color: rgb(197, 156, 101); */
+
+	font-size: 20px;
 }
 
-b {
-	font-family: 'MilliardBold';
-}
-
-a {
-	color: inherit;
-	text-decoration: none;
-	font-family: 'MilliardBold';
-}
-
-/* Pages */
-
-.columns {
+.container {
+	margin: 0 auto;
 	display: flex;
-	margin: 2em 1em;
-	gap: 1em;
+	width: max-content;
 }
+/* Case File */
 
-.col {
-	flex: 1;
-}
-
-.content {
-	padding: 1em 1em 0.5em;
-	min-height: 28em;
+.paper {
+	margin: 3rem;
+	height: 800px;
+	width: 600px;
 	background-color: #ffffff;
-	box-shadow: var(--shadow);
-	border-radius: 10px;
+	/* box-shadow: var(--shadow); */
+	border: 1px solid #e6e6e6;
 }
 
-.navLink {
-	margin: 0em 0em 0.5em;
-	padding: 0.1em 0em 0.2em 0em;
-	box-shadow: var(--shadow);
-	border-radius: 10px;
-	background-color: var(--dark-blue);
-	color: var(--light-blue);
-	font-family: MilliardBold;
-	font-size: 4.5rem;
-	text-align: center;
+.description {
+	vertical-align: top;
+	margin: 2em 0 0 2em;
 }
 
-/* About Me */
+.polaroid {
+	position: relative;
 
-.aboutMe {
-	display: flex;
+	display: block;
+	float: right;
+
+	height: 260px;
+	width: 230px;
+
+	/* box-shadow: var(--shadow); */
+
+	border-top: 1px solid #e6e6e6;
+	border-right: 1px solid #e6e6e6;
+	border-bottom: 3px solid #cccccc;
+	border-left: 3px solid #cccccc;
+
+	margin: 1.5em 2em 1em 1em;
+
+	/* transform: rotate(5deg); */
+
 }
 
 .photo {
-	width: 210px;
-	height: 210px;
-	box-shadow: var(--shadow);
-}
-
-.aboutMeText {
-	font-size: 1.6rem;
-	margin: 0.5em 0em 0em 0.5em;
-}
-
-.listText {
-	display: inline-block;
-	font-size: 1.6rem;
-	margin: 1em 0em 0em 0.5em;
-	font-family: 'Milliard';
-}
-
-ul {
-	margin-right: 1em;
-}
-
-
-/* Portfolio */
-
-.portfolioText {
 	display: block;
-	width: fit-content;
-	font-size: 1.9rem;
-	margin: 0.5em 0em 0em 0.5em;
+	margin: 15px auto 0;
+	height: 200px;
+	width: 200px;
+
+	background-color: black;
+
+	opacity: 0.9;
 }
 
-.portfolioText::before {
-	content: "> ";
+.photoInput {	
+	height: 260px;
+	width: 230px;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+
+	outline: 1px solid red;
 }
 
-/* Contact */
-
-.email {
-	margin-top: 3em;
-	display: flex;
+.name {
+	padding-bottom: 0.5em;
+	font-weight: bold;
+	text-decoration: underline;
 }
 
-.linkedin {
-	margin-top: 3em;
-	display: flex;
+.textarea {
+	display: block;
+	width: 260px;
+	min-height: 40px;
+	line-height: 20px;
 }
 
-.contactIcon {
-	margin: 0em 0em 0em 1em;
-	height: 140px;
-	width: 140px;
+.textarea:focus {
+	resize: both;
+	overflow: hidden;
 }
 
-.contactText {
-	font-size: 3rem;
-	margin: 0.7em 0em 0em 1em;
-	width: fit-content;
-}
+.stickyNote {
+	margin: 3rem;
+	padding: 1em 2em 2em;
 
-@media (max-width: 768px) {
-
-	.columns {
-		flex-direction: column;
-	}
-
-	.navLink {
-		padding: 0.2em 0em 0.2em 0em;
-		margin-top: 1em;
-		font-size: 3rem;
-	}
-
-	.first {
-		margin-top: 0em;
-	}
+	background-color: #ffdb10;
+	border: 1px solid black;
 	
-	.aboutMe {
-		display: block;
-	}
+	height: 230px;
+	width: 230px;
 
-	.aboutMeText {
-		font-size: 1.5rem;
-		font-family: 'Milliard';
-	}
+	color: black;
+	font-family: Helvetica;
+	font-size: 14px;
+}
 
-	.listText {
-		font-size: 1.5rem;
-	}
+a {
+	text-decoration: underline;
+	line-height: 1.5em;
+}
 
-	.portfolioText {
-		font-size: 1.5rem;
-	}
-
-	.contactIcon {
-		height: 100px;
-		width: 100px;
-	}
-
-	.contactText {
-		font-size: 2rem;
-		margin-left: 0.5em;
-	}
+a:hover {
+	cursor: pointer;
 }

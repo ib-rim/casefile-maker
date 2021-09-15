@@ -1,69 +1,36 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/site.webmanifest">
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-        <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="theme-color" content="#ffffff">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/main.css">
+        <script type="text/javascript" src="html2canvas.min.js" defer></script>
+        <script type="text/javascript" src="scripts.js" defer></script>
     </head>
     <body>
         <div class="container">
-            <div class="columns">
-                <div class="col">
-                    <div class="navLink first">
-                        About Me
-                    </div>
-                    <div class="content"> 
-                        <div class="aboutMe">
-                            <img class="photo" src="img/me.jpg" alt="Ibrahim Bashir"/>
-                            <div class="aboutMeText">
-                                I'm <b>Ibrahim</b>, a <b>Computer Science</b> student at <b>Queen Mary University of London.</b>
-                            </div>
-                        </div>
-                        <div class="listText">
-                            <b>Interests:</b>
-                            <ul>
-                                <li>UI/UX</li>
-                                <li>Data Analysis</li>
-                            </ul>
-                        </div>
-                        <div class="listText">
-                            <b>Skills:</b>
-                            <ul>
-                                <li>React</li>
-                            </ul>
-                        </div>
-                    </div>
+            <div id="capture" class="paper">
+                <div class="polaroid">
+                    <img id="photo" class="photo">
+                    <input src="/img/me.jpg" class="photoInput" type='file' onchange="readURL(this)"/>
                 </div>
-                <div class="col">
-                    <div class="navLink">
-                        Portfolio
-                    </div>
-                    <div class="content">
-                        <a class="portfolioText" href="https://ib-rim.github.io/speedcube" target="_blank" rel="noopener noreferrer">Speedcubing Web App</a>
-                        <a class="portfolioText" href="https://ib-rim.github.io/calculator-app/" target="_blank" rel="noopener noreferrer">Calculator</a>
-                    </div>
+                <div class="description">
+                    <label class="name">SUBJECT NAME</label>
+                    <span class="textarea" role="textbox"  contenteditable></span>
+                    <label class="name">DESCRIPTION</label>
+                    <span class="textarea" role="textbox"  contenteditable></span>
+                    <label class="name">BACKGROUND</label>
+                    <span class="textarea" role="textbox"  contenteditable></span>
+                    <label class="name">ADDITIONAL INFORMATION</label>
+                    <span class="textarea" role="textbox"  contenteditable></span>
                 </div>
-                <div class="col">
-                    <div class="navLink">
-                        Contact Me
-                    </div>
-                    <div class="content">
-                        <a class="email" href="mailto:ib.bashir@hotmail.com" target="_blank" rel="noopener noreferrer">
-                            <img class="contactIcon" src="img/email.png" alt="Email Icon"/>
-                            <div class="contactText">Email</div>
-                        </a>
-                        <a class="linkedin" href="https://uk.linkedin.com/in/ibrahim-bashir-250953197" target="_blank" rel="noopener noreferrer">
-                            <img class="contactIcon" src="img/linkedin.png" alt="LinkedIn Icon"/>
-                            <div class="contactText">Linked In</div>
-                        </a>	
-                    </div>
-                </div>
+            </div>
+            <div class="stickyNote">
+                <h3>Instructions</h3>
+                Click the polaroid to change the image.<br><br>
+                Click the area below each heading to change the text and/or resize the textarea.<br><br>
+                <b>Download the casefile as:</b><br>
+                <a onclick="downloadPaper('png')">png</a><br>
+                <a onclick="downloadPaper('jpeg')">jpeg</a><br>
             </div>
         </div>
     </body>
