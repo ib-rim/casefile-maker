@@ -60,7 +60,9 @@ body {
 	border-bottom: 3px solid #cccccc;
 	border-left: 3px solid #cccccc;
 
-	margin: 1.5em 2em 1em 1em;
+	/* margin: 1.5em 2em 1em 1em; */
+	top: 1.5em;
+	right: 2em;
 
 	/* transform: rotate(5deg); */
 
